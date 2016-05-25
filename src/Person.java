@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * Created by zach on 5/16/16.
  */
@@ -24,9 +26,9 @@ public class Person {
     }
 
     public void setName(String newName) {
-        if (isValidName(newName)) {
+        //if (isValidName(newName)) {
             name = newName;
-        }
+        //}
     }
 
     public int getAge() {
@@ -37,15 +39,18 @@ public class Person {
         age = newAge;
     }
 
-    public boolean getIsAlive() {
-        return isAlive;
-    }
-
-    public void setIsAlive(boolean newIsAlive) {
-        isAlive = newIsAlive;
-    }
-
     public static boolean isValidName(String newName) {
         return newName.contains(" ");
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", isAlive=" + isAlive +
+                ", family=" + Arrays.toString(family) +
+                ", email=" + email +
+                '}';
     }
 }
